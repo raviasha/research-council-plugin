@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "run.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "brief_version",
+    "brief",
+    "sources",
+    "evidence",
+    "claims",
+    "challenges",
+    "reviews",
+    "agent_log",
+    "query_log"
+  ],
+  "properties": {
+    "run_id": { "type": "string", "minLength": 4 },
+    "brief_version": {
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        { "type": "integer", "minimum": 1 }
+      ]
+    },
+    "brief": { "$ref": "brief.schema.json" },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "source.schema.json" }
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "$ref": "evidence.schema.json" }
+    },
+    "claims": {
+      "type": "array",
+      "items": { "$ref": "claim.schema.json" }
+    },
+    "challenges": {
+      "type": "array",
+      "items": { "$ref": "challenge.schema.json" }
+    },
+    "reviews": {
+      "type": "array",
+      "items": { "$ref": "review.schema.json" }
+    },
+    "agent_log": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "query_log": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tool_models": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "timestamps": {
+      "type": "object",
+      "properties": {
+        "created": { "type": "string", "format": "date-time" },
+        "updated": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  }
+}

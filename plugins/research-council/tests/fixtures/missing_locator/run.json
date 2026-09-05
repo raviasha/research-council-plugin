@@ -1,0 +1,81 @@
+{
+  "run_id": "run-2026-09-05-0002",
+  "brief_version": "1",
+  "brief": {
+    "brief_id": "brief-2026-09-05-002",
+    "version": 1,
+    "user_problem": "Test missing locator case.",
+    "intended_use": "Error coverage.",
+    "objective": "Detect incomplete locator coverage.",
+    "research_questions": [
+      {
+        "question_id": "q1",
+        "text": "Can claim coverage be measured?"
+      }
+    ],
+    "definitions": {},
+    "scope": "Single fixture.",
+    "constraints": [
+      "No external calls"
+    ],
+    "output": "Validation report.",
+    "success_criteria": [
+      "No locator"
+    ],
+    "assumptions": [
+      "This is synthetic."
+    ],
+    "unresolved_questions": []
+  },
+  "sources": [
+    {
+      "source_id": "source-1",
+      "title": "Controlled Retrieval Benchmarks",
+      "author_or_org": "Research Board",
+      "url_or_identifier": "https://example.edu/retrieval-benchmarks",
+      "publication_date": "2025-01-04",
+      "retrieved_at": "2026-09-05T00:00:00Z",
+      "publisher": "Example University",
+      "source_type": "peer-reviewed",
+      "independence_group": "independent"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "e1",
+      "source_id": "source-1",
+      "locator": "",
+      "excerpt_or_faithful_summary": "No locator on this evidence intentionally.",
+      "extracted_data": {
+        "study_type": "test"
+      },
+      "context_notes": "Failure fixture."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim-1",
+      "exact_text": "LLM retrieval reduces average onboarding time.",
+      "claim_type": "INFERENCE",
+      "importance": 0.6,
+      "question_id": "q1",
+      "supporting_evidence_ids": ["e1"],
+      "contradicting_evidence_ids": []
+    }
+  ],
+  "challenges": [],
+  "reviews": [
+    {
+      "claim_id": "claim-1",
+      "entailment_check": "supported",
+      "source_quality": "high",
+      "corroboration": "mixed",
+      "contradiction_status": "none",
+      "disposition": "Approved",
+      "confidence_rationale": "Limited source but direct excerpt.",
+      "reviewer_notes": "Used for negative test only."
+    }
+  ],
+  "agent_log": ["orchestrator", "researcher", "reviewer"],
+  "query_log": ["q1"]
+}

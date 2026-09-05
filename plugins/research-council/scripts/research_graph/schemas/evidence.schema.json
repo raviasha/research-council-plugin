@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evidence.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_id",
+    "source_id",
+    "locator",
+    "excerpt_or_faithful_summary",
+    "extracted_data"
+  ],
+  "properties": {
+    "evidence_id": { "type": "string", "minLength": 3 },
+    "source_id": { "type": "string", "minLength": 3 },
+    "locator": { "type": "string", "minLength": 1 },
+    "excerpt_or_faithful_summary": { "type": "string", "minLength": 1 },
+    "extracted_data": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "context_notes": { "type": "string" }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "common.schema.json",
+  "type": "object",
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 2,
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]*$"
+    },
+    "utcTimestamp": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

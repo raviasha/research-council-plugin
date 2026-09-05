@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "claim.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim_id",
+    "exact_text",
+    "claim_type",
+    "importance",
+    "question_id",
+    "supporting_evidence_ids",
+    "contradicting_evidence_ids"
+  ],
+  "properties": {
+    "claim_id": { "type": "string", "minLength": 3 },
+    "exact_text": { "type": "string", "minLength": 3 },
+    "claim_type": {
+      "type": "string",
+      "enum": ["FACT", "INFERENCE", "ESTIMATE", "ATTRIBUTION", "UNKNOWN"]
+    },
+    "importance": {
+      "type": ["number", "string"],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "question_id": { "type": "string", "minLength": 2 },
+    "supporting_evidence_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "contradicting_evidence_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "unresolved": { "type": "boolean" }
+  }
+}

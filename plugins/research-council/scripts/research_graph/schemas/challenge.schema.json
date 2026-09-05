@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "challenge.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "challenge_id",
+    "claim_id",
+    "challenge_type",
+    "alternative_hypothesis",
+    "evidence_ids",
+    "severity"
+  ],
+  "properties": {
+    "challenge_id": { "type": "string", "minLength": 3 },
+    "claim_id": { "type": "string", "minLength": 3 },
+    "challenge_type": {
+      "type": "string",
+      "enum": ["Counterexample", "Contradiction", "Coverage", "Methodological"]
+    },
+    "alternative_hypothesis": { "type": "string", "minLength": 2 },
+    "evidence_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "severity": { "type": "string", "enum": ["low", "medium", "high"] }
+  }
+}

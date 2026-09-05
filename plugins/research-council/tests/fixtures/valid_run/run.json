@@ -1,0 +1,156 @@
+{
+  "run_id": "run-2026-09-05-0001",
+  "brief_version": "1",
+  "brief": {
+    "brief_id": "brief-2026-09-05-001",
+    "version": 1,
+    "user_problem": "Decide whether to replace web search with LLM-only retrieval for onboarding.",
+    "intended_use": "Decision memo for product governance.",
+    "objective": "Compare speed, precision, and governance risk.",
+    "research_questions": [
+      {
+        "question_id": "q1",
+        "text": "What reliability gains can be observed?"
+      },
+      {
+        "question_id": "q2",
+        "text": "What governance risks increase?"
+      }
+    ],
+    "definitions": {
+      "llm": "Large language model"
+    },
+    "scope": "Two independent studies plus one industry report.",
+    "constraints": [
+      "Public evidence only"
+    ],
+    "output": "Auditable decision package.",
+    "success_criteria": [
+      "At least one contradiction and one approved claim"
+    ],
+    "assumptions": [
+      "Sources are representative for the target workflow."
+    ],
+    "unresolved_questions": []
+  },
+  "sources": [
+    {
+      "source_id": "source-1",
+      "title": "Controlled Retrieval Benchmarks",
+      "author_or_org": "Research Board",
+      "url_or_identifier": "https://example.edu/retrieval-benchmarks",
+      "publication_date": "2025-01-04",
+      "retrieved_at": "2026-09-05T00:00:00Z",
+      "publisher": "Example University",
+      "source_type": "peer-reviewed",
+      "independence_group": "independent",
+      "methodology": "controlled",
+      "relevance": "high"
+    },
+    {
+      "source_id": "source-2",
+      "title": "LLM Product Notes",
+      "author_or_org": "Vendor Research",
+      "url_or_identifier": "https://example.com/llm-product-notes",
+      "publication_date": "2024-12-01",
+      "retrieved_at": "2026-09-05T00:00:00Z",
+      "publisher": "Vendor",
+      "source_type": "industry-report",
+      "independence_group": "independent",
+      "methodology": "descriptive",
+      "relevance": "medium"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "e1",
+      "source_id": "source-1",
+      "locator": "Section 3.1",
+      "excerpt_or_faithful_summary": "Randomized testing reports a 22% retrieval-speed gain with parity in relevance.",
+      "extracted_data": {
+        "study_type": "randomized-control"
+      },
+      "context_notes": "Published with reproducibility supplement."
+    },
+    {
+      "evidence_id": "e2",
+      "source_id": "source-2",
+      "locator": "Appendix B",
+      "excerpt_or_faithful_summary": "The report includes internal benchmarks but with undisclosed corpus size.",
+      "extracted_data": {
+        "study_type": "internal-benchmark"
+      },
+      "context_notes": "Vendor controlled evidence."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim-1",
+      "exact_text": "LLM retrieval reduces average onboarding time by about 20%.",
+      "claim_type": "INFERENCE",
+      "importance": 0.85,
+      "question_id": "q1",
+      "supporting_evidence_ids": ["e1"],
+      "contradicting_evidence_ids": ["e2"],
+      "unresolved": false
+    },
+    {
+      "claim_id": "claim-2",
+      "exact_text": "Governance risk increases when source provenance is opaque.",
+      "claim_type": "FACT",
+      "importance": 0.55,
+      "question_id": "q2",
+      "supporting_evidence_ids": ["e2"],
+      "contradicting_evidence_ids": [],
+      "unresolved": false
+    }
+  ],
+  "challenges": [
+    {
+      "challenge_id": "challenge-1",
+      "claim_id": "claim-1",
+      "challenge_type": "Coverage",
+      "alternative_hypothesis": "The speed gains may be workload-specific and not transferable.",
+      "evidence_ids": ["e2"],
+      "severity": "high"
+    }
+  ],
+  "reviews": [
+    {
+      "claim_id": "claim-1",
+      "entailment_check": "partially-supported",
+      "source_quality": "high",
+      "corroboration": "mixed",
+      "contradiction_status": "open",
+      "disposition": "Approved-with-caveat",
+      "confidence_rationale": "Strong source, limited corpus breadth.",
+      "reviewer_notes": "Needs one additional independent source before final adoption."
+    },
+    {
+      "claim_id": "claim-2",
+      "entailment_check": "supported",
+      "source_quality": "medium",
+      "corroboration": "mixed",
+      "contradiction_status": "none",
+      "disposition": "Approved",
+      "confidence_rationale": "Supported by known governance guidance.",
+      "reviewer_notes": "No direct contradictions in reviewed sources."
+    }
+  ],
+  "agent_log": ["orchestrator", "intent", "researcher", "devil", "reviewer", "documentation"],
+  "query_log": ["q1", "q2"],
+  "tool_models": {
+    "orchestrator": "gpt-6-astra",
+    "researcher": "gpt-6-astra",
+    "devil": "gpt-6-astra",
+    "reviewer": "gpt-6-astra",
+    "documentation": "gpt-6-astra"
+  },
+  "timestamps": {
+    "created": "2026-09-05T00:00:00Z",
+    "updated": "2026-09-05T00:01:00Z"
+  },
+  "artifacts": {
+    "run_directory": "/tmp/rc-run"
+  }
+}
