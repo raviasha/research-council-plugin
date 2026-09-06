@@ -1,7 +1,7 @@
 {
-  "name": "personal",
+  "name": "research-council",
   "interface": {
-    "displayName": "Personal"
+    "displayName": "Research Council"
   },
   "plugins": [
     {
