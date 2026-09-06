@@ -7,6 +7,8 @@ Research Council is a Codex plugin that turns a research prompt into:
 - Validator-issued quality gates (`FR`-coded)
 - A DOCX report + JSON evidence package containing only approved claims
 
+The coordinator dispatches five dependent specialist agents: Intent, Researcher, Devil's Advocate, Reviewer, and Documentation.
+
 ## Layout
 
 - `.codex-plugin/plugin.json` — plugin manifest and UI metadata
@@ -24,6 +26,10 @@ codex plugin add research-council@research-council
 ```
 
 This installs the plugin directly from GitHub; no repository clone is needed. Start a new Codex task after installation.
+
+## Use
+
+For a guaranteed five-agent workflow, begin the task with: `Use Research Council to research [your question].`
 
 ## Run validation
 
