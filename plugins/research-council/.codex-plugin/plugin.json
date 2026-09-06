@@ -1,6 +1,6 @@
 {
   "name": "research-council",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Run a five-agent research workflow that confirms user intent before investigation.",
   "author": {
     "name": "Research Council Contributors"
