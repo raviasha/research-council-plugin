@@ -1,6 +1,6 @@
 # Research Council for Codex
 
-Research Council runs evidence-backed, adversarial research workflows in Codex. It produces an auditable research brief, evidence graph, and approved-claim report.
+Research Council runs evidence-backed, adversarial research workflows in Codex. It first clarifies and confirms the research brief with the user, then produces an auditable evidence graph and approved-claim report.
 
 ## Install from GitHub
 

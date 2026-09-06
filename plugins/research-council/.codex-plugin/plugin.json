@@ -1,7 +1,7 @@
 {
   "name": "research-council",
-  "version": "0.2.0",
-  "description": "Run a five-agent, evidence-backed adversarial research workflow.",
+  "version": "0.3.0",
+  "description": "Run a five-agent research workflow that confirms user intent before investigation.",
   "author": {
     "name": "Research Council Contributors"
   },
@@ -10,8 +10,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Research Council",
-    "shortDescription": "Five-agent evidence-backed research.",
-    "longDescription": "Dispatches five specialist agents to produce versioned briefs, adversarially reviewed evidence graphs, and auditable DOCX + JSON output.",
+    "shortDescription": "Five-agent research, confirmed with you.",
+    "longDescription": "Clarifies and confirms your research brief before dispatching five specialist agents for an auditable DOCX + JSON output.",
     "developerName": "Research Council Contributors",
     "category": "Productivity",
     "capabilities": ["Interactive", "Write"],
