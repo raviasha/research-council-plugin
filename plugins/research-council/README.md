@@ -14,13 +14,16 @@ Research Council is a Codex plugin that turns a research prompt into:
 - `skills/` — role skill contracts (orchestrator, intent, researcher, devil, reviewer, documentation)
 - `tests/` — validation and contract tests
 
-## Install
+## Install from GitHub
 
-From a local checkout:
+In a Codex terminal, run:
 
 ```bash
-python3 /Users/<you>/path/to/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py plugins/research-council
+codex plugin marketplace add https://github.com/raviasha/research-council-plugin.git --ref main
+codex plugin add research-council@research-council
 ```
+
+This installs the plugin directly from GitHub; no repository clone is needed. Start a new Codex task after installation.
 
 ## Run validation
 
@@ -35,6 +38,4 @@ To share on GitHub:
 
 1. Commit `plugins/research-council` and `.agents/plugins/marketplace.json`.
 2. Push to your repository.
-3. Configure a repository marketplace entry from the repo marketplace JSON so collaborators can add the plugin.
-
-Collaborators can clone or pull the repository and follow their Codex marketplace installation flow.
+3. Collaborators add the GitHub repository as the `research-council` marketplace, then install `research-council` from it with the commands above.
